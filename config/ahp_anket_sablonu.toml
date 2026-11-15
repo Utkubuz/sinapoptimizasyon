@@ -1,0 +1,36 @@
+# AHP anket şablonu (swing ağırlıklandırma). Her satır "a/b" şu soruyu yanıtlar:
+# 'Referans takvimdeki a sorununu ideale indirmek, b sorununu ideale indirmekten ne kadar önemli?'
+# 1 eşit · 3 biraz daha · 5 çok daha · 7 çok çok daha · 9 kesinlikle daha önemli
+# Ters yön için kesri TIRNAK içinde yazın: "1/3", "1/5" … Değiştirmediğiniz satırlar 'eşit önem' sayılır.
+# Kriterler: S1 arka arkaya sınav · S2 aynı gün sınav · S3 zor sınavlar arası hazırlık süresi
+#            S7 günde 3+ sınav · S9 öğrenciler arası adalet · S10 bölüm-sınıf grupları arası adalet
+#            S4 büyük sınavlar dönem başında · S5 sınavın az salona bölünmesi · S6 boş koltuk
+#            S11 hocanın kendi sınavında bulunması
+
+[katilimci]
+ad = "Adınız"
+rol = "ogrenci"  # ogrenci / ogretim_elemani / idari
+
+[ust]
+"ogrenci_konforu/adalet" = 1
+"ogrenci_konforu/kurum_verimliligi" = 1
+"adalet/kurum_verimliligi" = 1
+
+[ogrenci_konforu]
+"S1/S2" = 1
+"S1/S3" = 1
+"S1/S7" = 1
+"S2/S3" = 1
+"S2/S7" = 1
+"S3/S7" = 1
+
+[adalet]
+"S9/S10" = 1
+
+[kurum_verimliligi]
+"S4/S5" = 1
+"S4/S6" = 1
+"S4/S11" = 1
+"S5/S6" = 1
+"S5/S11" = 1
+"S6/S11" = 1

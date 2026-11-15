@@ -1,0 +1,31 @@
+# Algoritma parametreleri ve gözetmen ağırlıkları.
+# Takvim kriterlerinin (S1–S11) ağırlıkları burada değil: AHP anketinden gelir, anket yoksa eşittir.
+# Sert kurallar ağırlık almaz: Ceza = (sert ihlal, yumuşak ceza) sözlükbilimsel karşılaştırılır.
+
+[gozetmen]
+# GEÇİCİ: ileride gözetmen kriterleri için de AHP / gerekçeli değerler kullanılacak.
+adalet = 1.0               # G4: Σ (yük − hedef)² katsayısı
+ders_personeli = 5.0       # G6: hocası/asistanı gözetmen olmayan sınav başına ceza
+farkli_bolum = 0.5         # G7: dersin bölümü dışından gözetmen (görev başına)
+ozel_salon_bolum = 20.0    # G7: özel gereksinim salonunda farklı bölümden gözetmen (yönetmelik gereği yüksek)
+sorumlu = 30.0             # G8: çok gözetmenli salonda sorumlu öğretim üyesi yok
+
+[tavlama]
+# Sıcaklık sabit olarak yazılmaz; Ben-Ameur (2004) sabit nokta algoritmasıyla veriden ve AHP ölçeğinden
+# otomatik kalibre edilir. Süre bütçesi ilkesi: McCollum vd. (2010, ITC 2007). Yeniden ısıtma: Thompson & Dowsland (1998).
+sure_sn = 15.0
+orneklem_boyutu = 200
+baslangic_kabul_orani = 0.80
+bitis_kabul_orani = 0.001
+yeniden_isitma_orani = 0.25
+takas_olasiligi = 0.20
+
+[tabu]
+# Aday listesi stratejisi (Di Gaspero & Schaerf 2001, PATAT) ve √E ölçekli dinamik tabu süresi
+# (Taillard 1991). Süre bütçesi: McCollum vd. (2010, ITC 2007).
+sure_sn = 15.0
+aday_sayisi = 40
+tabu_alt_katsayi = 1.0
+tabu_ust_katsayi = 2.0
+takas_olasiligi = 0.20
+cesitlendirme_orani = 0.25
