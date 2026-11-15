@@ -24,7 +24,7 @@ python -m venv .venv
 .venv\Scripts\python -m sinav_takvimi veri-uret        # sentetik veri → data/sinav.db
 .venv\Scripts\python -m sinav_takvimi coz              # takvimi üret (--algoritma, --sure)
 .venv\Scripts\python -m sinav_takvimi.arayuz.masaustu  # masaüstü uygulaması
-.venv\Scripts\streamlit run src\sinav_takvimi\arayuz\streamlit_app.py   # web arayüzü (ayrıntılı rapor)```
+.venv\Scripts\streamlit run streamlit_app.py   # web arayüzü (ayrıntılı rapor)```
 Windows konsolunda Türkçe karakterler için `set PYTHONIOENCODING=utf-8` gerekebilir.
 
 ## Model
